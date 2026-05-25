@@ -25,7 +25,7 @@ def train_and_save_pipeline():
             df_clean['Age'],
             bins=[0, 12, 25, 60, int(df_clean['Age'].max())],
             labels=['ninio', 'joven', 'adulto', 'anciano']
-        )
+        ).astype(str) 
         df_clean = df_clean.drop(columns=['Age'])
 
     # Convertir 'Last_Login' a datetime y calcular días de inactividad
